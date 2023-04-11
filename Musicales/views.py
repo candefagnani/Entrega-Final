@@ -60,18 +60,7 @@ class Logout(LogoutView):
 
 
 class ProfileUpdate(UpdateView):
-    from django.urls import reverse_lazy
-from django.views.generic import UpdateView
-from .models import Profile
-
-class ProfileUpdate(UpdateView):
     model = Profile
     fields = '__all__'
     success_url = reverse_lazy('post-list')
-
-    def get_object(self, queryset=None):
-        return self.model.objects.get(id = self.kwargs['pk'])
-
-    def form_valid(self, form):
-        return super().form_valid(form)
 

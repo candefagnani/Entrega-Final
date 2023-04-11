@@ -74,9 +74,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}"> {{user.username}} | Logout</a>
                 </li>
-                <li class="nav-item">
-                  <a href="{% url 'registration/edit-profile' slug=request.user.profile.id %}" class="btn btn-primary"> Editar perfil </a>
-                </li>
               {% else %}  
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'login' %}"> Login </a>
