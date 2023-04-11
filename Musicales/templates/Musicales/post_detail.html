@@ -1,0 +1,15 @@
+{% extends "Musicales/base.html" %}
+
+{% block main %}
+<div class="container">
+    <h1>{{ object.name }}</h1>
+
+    {% if object.imagen %}
+      <img src="{{ object.imagen.url }}" alt="{{ object.name }}">
+    {% endif %}
+
+    <p>{{ object.description }}</p>
+    
+    <a href="{% url 'post-list' %}">Volver</a>
+  </div>
+{% endblock %}
