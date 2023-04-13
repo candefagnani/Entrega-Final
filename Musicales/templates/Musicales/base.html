@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)http://localhost:8000/ -->
-<html lang="en">
+<html lang= "es" >
   
 <head>
     {% load static %}
@@ -10,16 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Carousel Template · Bootstrap v5.0</title>
+    <title>Musicales de Broadway</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
     
 
-    <!-- Bootstrap core CSS -->
 <link href="{% static 'Musicales/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Favicons -->
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -53,7 +50,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          {% if user.profile.imagen %}   <!-- margin para los margenes!!! -->
+          {% if user.profile.image %}  
             <a href="{% url 'profile-update' user.profile.id %}">
             <img src="{{user.profile.imagen.url}}" height="100%" width="36px" style="border-radius: 50%; margin-right:10px">
             </a>
@@ -73,10 +70,6 @@
               {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}"> {{user.username}} | Logout</a>
-                </li>
-                <!-- Esta parte está rota -->
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'profile-update' user.id %}"> Profile</a>
                 </li>
               {% else %}  
                 <li class="nav-item">
@@ -102,7 +95,7 @@
     <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="https://getbootstrap.com/docs/5.0/examples/carousel/#"> Back to top </a></p>
-    <p>© 2017–2023 Company, Inc. · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#"> Privacy </a> · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#"> Terms </a></p>
+    <p>© 2023 Candela Fagnani - CorderHouse. · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#"> Privacy </a> · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#"> Terms </a></p>
   </footer>
   
     <script src="{% static 'Musicales/js/bootstrap.bundle.min.js' %}"></script>

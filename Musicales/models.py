@@ -18,4 +18,4 @@ class Profile(models.Model):
     user = models.OneToOneField(to = User, on_delete = models.CASCADE, related_name = "profile")
     instagram = models.CharField(max_length = 100)
     email = models.CharField(max_length = 100)
-    imagen = models.ImageField(upload_to = "profiles", null = True, blank = True)
+    imagen = models.ImageField(default = 'default.png', upload_to = 'profiles')
