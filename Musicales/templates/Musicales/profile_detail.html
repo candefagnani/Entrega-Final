@@ -1,0 +1,16 @@
+{% extends "Musicales/base.html" %}
+
+{% block main %}
+<div class="container mt-3 mb-3 mx-3">
+    <h2>{{ object.user }}</h2>
+
+    {% if object.imagen %}
+      <img src="{{ object.imagen.url }}" alt="{{ object.imagen }}">
+    {% endif %}
+    <p>Mail de contacto: {{ object.email }}</p>
+    <p>Instagram del usuario: {{object.instagram}}</p>
+
+    
+    <button><a href="{% url 'post-list' %}">Volver</a></button>
+  </div>
+{% endblock %}
