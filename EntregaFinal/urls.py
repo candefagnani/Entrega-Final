@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Musicales.views import index, PostList, PostDetail, PostCreate,PostUpdate,PostDelete, SignUp, Login, Logout, CreateProfile, ProfileUpdate
+from Musicales.views import index, PostList, PostDetail, PostCreate,PostUpdate,PostDelete, SignUp, Login, Logout, CreateProfile, ProfileUpdate, ProfileList, ProfileDetail
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,6 +31,8 @@ urlpatterns = [
     path('logout/',Logout.as_view(), name = "logout"),
     path('profile/<pk>/create/', CreateProfile.as_view(), name='create-profile'),
     path('profile/<pk>/update/', ProfileUpdate.as_view(), name='profile-update'),
+    path('profile/list',ProfileList.as_view(), name = "profile-list"),
+    path('profile/<pk>/detail',ProfileDetail.as_view(), name = "profile-detail"),
 
     path("",index, name = "index"),
 ]

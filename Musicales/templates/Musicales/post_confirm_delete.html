@@ -6,7 +6,7 @@
     <div class="col-md-8 col-lg-6">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title">¿Estás seguro que quieres borrar el post "{{ object.name }}"?</h1>
+          <h1 class="card-title">¿Estás seguro que quieres borrar el post "{{ object.musical }}"?</h1>
           <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
