@@ -15,7 +15,7 @@ class Post(models.Model):
         return f"{self.id} - {self.name} ({self.year_of_opening})"
 
 class Profile(models.Model):
-    user = models.OneToOneField(to= User, on_delete = models.CASCADE, related_name = "profile")
+    user = models.OneToOneField(to = User, on_delete = models.CASCADE, related_name = "profile")
     instagram = models.CharField(max_length = 100)
     email = models.CharField(max_length = 100)
     imagen = models.ImageField(upload_to = "profiles", null = True, blank = True)
