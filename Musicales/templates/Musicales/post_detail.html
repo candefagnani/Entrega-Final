@@ -8,7 +8,10 @@
       <img src="{{ object.imagen.url }}" alt="{{ object.name }}">
     {% endif %}
 
-    <p>{{ object.description }}</p>
+    <p>El musical {{ object.musical }} debutó por primera vez en Broadway en el año {{object.estreno}}</p>
+    <p>Breve descripcion: {{ object.descripcion }}</p>
+    <p>Dentro de las figuras conocidas que fueron parte del musical, encontramos a {{ object.actor_principal }}</p>
+    <p>La cancion más reconocida del musical es {{ object.cancion_principal }} y tiene una duración de {{object.duracion}}</p>
     
     <a href="{% url 'post-list' %}">Volver</a>
   </div>

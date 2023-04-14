@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     musical = models.CharField(max_length = 30)
     estreno = models.IntegerField()
-    description = models.CharField(max_length = 100)
-    leading_actor = models.CharField(max_length = 100)
-    main_song = models.CharField(max_length = 100)
-    song_duration = models.DecimalField(max_digits = 5, decimal_places = 2)
+    descripcion = models.CharField(max_length = 100)
+    actor_principal = models.CharField(max_length = 100)
+    cancion_principal = models.CharField(max_length = 100)
+    duracion = models.DecimalField(max_digits = 5, decimal_places = 2)
     publisher = models.ForeignKey(to = User, on_delete = models.CASCADE, related_name = "publisher")
     imagen = models.ImageField(upload_to = "posts", null = True, blank = True)
     

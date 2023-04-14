@@ -1,8 +1,8 @@
 {% extends "Musicales/base.html" %}
 
 {% block main %}
-<h1> Perfil del usuario </h1>
-<p>Ya casi está listo el registro de tu usuario; por favor completá estos datos</p>
+<h1> Últimos detalles ... </h1>
+<p>Ya casi está listo tu usuario; por favor completá lo siguientes datos</p>
 <form method = "POST" enctype = "multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
