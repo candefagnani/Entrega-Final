@@ -6,13 +6,13 @@
     <div class="col-md-8 col-lg-6">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title">¿Estás seguro que quieres borrar el post "{{ object.musical }}"?</h1>
+          <h1 class="card-title">¿Estás seguro que quieres borrar el mensaje "{{ object.id }}"?</h1>
           <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="text-center mt-4">
               <button type="submit" class="btn btn-danger"> Borrar </button>
-              <a href="{% url 'post-list' %}" class="btn btn-dark mr-2">Volver</a>
+              <a href="{% url 'mensaje-list' %}" class="btn btn-dark mr-2">Volver</a>
             </div>
           </form>
         </div>

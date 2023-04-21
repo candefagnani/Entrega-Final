@@ -1,0 +1,15 @@
+{% extends "Musicales/base.html" %}
+
+{% block main %}
+
+<div class="container">
+    <p></p>
+  <h1> Nuevo mensaje </h1>
+  <form class="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+      <input type="submit" value="Guardar" class="btn btn-primary">
+    </div>
+  </form>
+</div>
+{% endblock %}

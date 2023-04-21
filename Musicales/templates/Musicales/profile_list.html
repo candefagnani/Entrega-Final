@@ -1,12 +1,20 @@
 {% extends "Musicales/base.html" %}
 
 {% block main %}
-  <h1>Lista de Perfiles</h1>
-  <ul>
-    {% for profile in object_list %}
-      <li>{{ profile }}</li><a href="{% url 'profile-detail' profile.id %}">Detalle</a>
-    {% empty %}
-      <li>No hay perfiles</li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <p></p>
+    <h1 class="text-center mb-4">Nuestros usuarios registrados</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <ul class="list-group">
+          {% for profile in object_list %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">{{ profile }} <a href="{% url 'profile-detail' profile.id %}" class="btn btn-primary">Detalle</a></li>
+            <p></p>
+          {% empty %}
+            <li class="list-group-item">No hay perfiles</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 {% endblock %}

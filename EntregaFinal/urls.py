@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Musicales.views import index, PostList, PostDetail, PostCreate,PostUpdate,PostDelete, SignUp, Login, Logout, CreateProfile, ProfileUpdate, ProfileList, ProfileDetail
+from Musicales.views import index, PostList, PostDetail, PostCreate,PostUpdate,PostDelete, SignUp, Login, Logout, CreateProfile, ProfileUpdate, ProfileList, ProfileDetail,about, MensajeCreate, MensajeList, MensajeDelete
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -33,8 +33,11 @@ urlpatterns = [
     path('profile/<pk>/update/', ProfileUpdate.as_view(), name='profile-update'),
     path('profile/list',ProfileList.as_view(), name = "profile-list"),
     path('profile/<pk>/detail',ProfileDetail.as_view(), name = "profile-detail"),
-
+    path('about/',about, name = 'about'),
     path("",index, name = "index"),
+    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create"),
+    path('mensaje/list', MensajeList.as_view(), name="mensaje-list"),
+    path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

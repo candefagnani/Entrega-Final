@@ -2,17 +2,22 @@
 
 {% block main %}
 <div class="container">
-    <h1>{{ object.musical }}</h1>
+    <h1 class="musical-title">{{ object.musical }}</h1>
 
     {% if object.imagen %}
-      <img src="{{ object.imagen.url }}" alt="{{ object.name }}">
+      <img src="{{ object.imagen.url }}" alt="{{ object.name }}" class="musical-image">
     {% endif %}
 
-    <p>El musical {{ object.musical }} debutó por primera vez en Broadway en el año {{object.estreno}}</p>
-    <p>Breve descripcion: {{ object.descripcion }}</p>
-    <p>Dentro de las figuras conocidas que fueron parte del musical, encontramos a {{ object.actor_principal }}</p>
-    <p>La cancion más reconocida del musical es {{ object.cancion_principal }} y tiene una duración de {{object.duracion}}</p>
+    <p class="musical-info">El musical {{ object.musical }} debutó por primera vez en Broadway en el año {{object.estreno}}.</p>
+    <p class="musical-info">Breve descripción: {{ object.descripcion }}</p>
+    <p class="musical-info">Dentro de las figuras conocidas que fueron parte del musical, encontramos a {{ object.actor_principal }}.</p>
+    <p class="musical-info">La canción más reconocida del musical es {{ object.cancion_principal }} y tiene una duración de {{object.duracion}}.</p>
+    {% if post.puntuacion %}
+    <p class="musical-info">Puntuación: {{ post.puntuacion }} estrellas </p>
+    {% endif %}
+    <p class="musical-info">Comentarios de {{user.username}} acerca de este musical: {{ post.comentario }} </p>
     
-    <a href="{% url 'post-list' %}">Volver</a>
-  </div>
+    <a href="{% url 'post-list' %}" class="btn btn-primary mt-3">Volver</a>
+</div>
 {% endblock %}
+
