@@ -8,7 +8,7 @@ El proyecto consiste en una página tipo blog. En esta se permitirá hacer poste
 
 ## Video a Youtube
 
-Link al video: 
+Link al video: https://youtu.be/hc-UHJGvEQ4
 
 ## Funcionalidades
 
