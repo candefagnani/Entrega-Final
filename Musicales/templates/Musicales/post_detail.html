@@ -7,6 +7,7 @@
     {% if object.imagen %}
       <img src="{{ object.imagen.url }}" alt="{{ object.name }}" class="musical-image">
     {% endif %}
+    <p></p>
 
     <p class="musical-info">El musical {{ object.musical }} debutó por primera vez en Broadway en el año {{object.estreno}}.</p>
     <p class="musical-info">Breve descripción: {{ object.descripcion }}</p>
@@ -15,7 +16,7 @@
     {% if post.puntuacion %}
     <p class="musical-info">Puntuación: {{ post.puntuacion }} estrellas </p>
     {% endif %}
-    <p class="musical-info">Comentarios de {{user.username}} acerca de este musical: {{ post.comentario }} </p>
+    <p class="musical-info">Comentarios acerca de este musical: {{ post.comentario }} </p>
     
     <a href="{% url 'post-list' %}" class="btn btn-primary mt-3">Volver</a>
 </div>

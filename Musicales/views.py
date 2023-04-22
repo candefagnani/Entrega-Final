@@ -86,6 +86,7 @@ class ProfileUpdate(UpdateView):
     #Detalle del Perfil seleccionado
 class ProfileDetail(DetailView):
     model = Profile
+
 class ProfileList(ListView):
     model = Profile
     template_name = 'Musicales/profile_list.html'
@@ -100,7 +101,7 @@ class SignUp(CreateView):
         return url
 
 class Login(LoginView):
-    next_page = reverse_lazy("post-list")
+    next_page = reverse_lazy("index")
 
 class Logout(LogoutView):
     template_name = 'registration/logout.html'
@@ -109,12 +110,13 @@ def about(request):
 	return render(request, 'Musicales/about.html', context = None)
 
 #CRUD MENSAJES
+    #Crear Mensaje
 class MensajeCreate(CreateView):
     model = Mensaje
     fields = '__all__'
-    success_url = reverse_lazy("post-list")
+    success_url = reverse_lazy("index")
 
-
+    #Ver los mensajes en formato lista
 class  MensajeList(LoginRequiredMixin, ListView):
     model = Mensaje
     context_object_name = "mensajes"
@@ -122,7 +124,7 @@ class  MensajeList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Mensaje.objects.filter(destinatario=self.request.user.id).all()
     
-
+    #Borrar el mensaje
 class MensajeDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model= Mensaje
     success_url = reverse_lazy("mensaje-list")
@@ -131,3 +133,6 @@ class MensajeDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         user_id = self.request.user.id
         mensaje_id = self.kwargs.get('pk')
         return Mensaje.objects.filter(destinatario=user_id).exists()
+
+    def handle_no_permission(self):
+        return render(self.request, "Musicales/not_found.html")

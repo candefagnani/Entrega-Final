@@ -18,8 +18,6 @@
                 {% endif %}
                     <div class="container">
                     <div class="carousel-caption text-start" style="color:black">
-                        <h1>{{post.musical}}</h1>
-                        <p>{{post.estreno}}</p>
                         <p><a class="btn btn-info" href="{% url 'post-detail' post.id %}">Ver más</a></p>
                     </div>
                     </div>
@@ -74,12 +72,12 @@
 
       <div class="row featurette">
       <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Descrubre todo acerca de los musicales más conocidos del mundo</h2>
+          <h2 class="featurette-heading">Descrubre todo acerca de los musicales más conocidos del mundo en Musicals!</h2>
           <p class="lead">En esta página podrás compartir aventuras, experiencias y buscar recomendaciones para tu próximo viaje a Nueva York</p>
           <p><a class="btn btn-info" href="{% url 'post-list' %}">Vamos allá</a></p> 
       </div>
       <div class="col-md-5 order-md-1">
-        <img src="media/posts/POSTDEFAULT.jpg" height="400" width="400">
+        <img src="media/posts/POSTDEFAULT.jpg" height="400" width="100%">
 
       </div>
       
